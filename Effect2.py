@@ -3,22 +3,39 @@
 import random
 import time
 #------------------#
-line = []
-
 def listconv(line):
     str1 = " "
     return (str1.join(line))
 
-while True:
-    mix = random.randint(0, 100)
-    for i in range(0, mix):
-        line.append(" ")
+line = []
 
-    choices = [".", "/", ">", "#", "@", "*", "%", "<"]
-    choice = random.choice(choices)
+while True:
+    double = random.randint(0, 1)
     
-    line.append(choice)
-    print(listconv(line))
-    time.sleep(0.001)
-    line.clear()
+    if double == 0:
+        mix = random.randint(0, 100)
+        for i in range(0, mix):
+            line.append(" ")
+
+        choices = [".", "/", ">", "#", "@", "*", "%", "<"]
+        choice = random.choice(choices)
+        line.append(choice)
+        
+        print(listconv(line))
+        time.sleep(0.001)
+        line.clear()
+
+    if double == 1:
+        for i in range(0, 2):
+            mix = random.randint(0, 50)
+            for i in range(0, mix):
+                line.append(" ")
+                
+            choices = [".", "/", ">", "#", "@", "*", "%", "<"]
+            choice = random.choice(choices)
+            line.append(choice)
+            
+        print(listconv(line))
+        time.sleep(0.001)
+        line.clear()
 #=============FURRO404=============#
